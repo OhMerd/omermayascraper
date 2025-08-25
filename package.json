@@ -1,0 +1,47 @@
+{
+  "name": "omer-mayascraper",
+  "version": "1.0.0",
+  "description": "Maya TASE financial reports scraper with PDF and XBRL download functionality",
+  "main": "src/scrapers/maya-enhanced-scraper.js",
+  "type": "module",
+  "scripts": {
+    "scrape": "node src/scrapers/sysco-paginated.js",
+    "scrape-maya": "node src/scrapers/maya-tase-scraper.js",
+    "scrape-maya-enhanced": "node src/scrapers/maya-enhanced-scraper.js",
+    "test-maya": "node src/scripts/test-maya-selectors.js",
+    "setup": "node src/database/sysco-setup.js",
+    "dev": "HEADLESS=false node src/scrapers/sysco-paginated.js",
+    "dev-maya": "HEADLESS=false node src/scrapers/maya-tase-scraper.js",
+    "dev-maya-enhanced": "HEADLESS=false node src/scrapers/maya-enhanced-scraper.js",
+    "export": "node src/scripts/export-csv.js",
+    "analyze": "python3 src/analysis/run_analysis.py"
+  },
+  "keywords": [
+    "puppeteer",
+    "web-scraping",
+    "maya-tase",
+    "nodejs",
+    "financial-reports",
+    "pdf-download",
+    "xbrl-scraper"
+  ],
+  "author": "Omer",
+  "license": "MIT",
+  "dependencies": {
+    "csv": "^6.3.11",
+    "dotenv": "^17.1.0",
+    "puppeteer": "^24.12.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "sqlite3": "^5.1.7",
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
